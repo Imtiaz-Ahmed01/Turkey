@@ -1,0 +1,245 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --font-1: "Poppins", serif;
+  --font-size-1: 16px;
+  --font-color-1: snow;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-1);
+  color: var(--font-color-1);
+}
+.section-01 {
+  background-image: url(./main-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  height: 100vh;
+  width: 100%;
+}
+nav {
+  animation: fade-in 1s ease-in-out, slide-in 1s ease-in-out;
+  display: flex;
+  height: 90px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 30px;
+  border-bottom-right-radius: 22px;
+  border-bottom-left-radius: 22px;
+  position: sticky;
+}
+nav h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+nav h1 a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s ease;
+  letter-spacing: 2px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+nav ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px 10px;
+  transition: 0.3s ease-out;
+  &:hover {
+    background: rgba(222, 122, 52);
+  }
+}
+nav ul li ul.dropdown {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  display: block;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  border-top-left-radius: 0px;
+  z-index: 99;
+  display: none;
+  overflow: hidden;
+  padding: 20px 10px;
+}
+nav ul li:hover ul.dropdown {
+  display: block;
+}
+nav ul li ul.dropdown li {
+  display: block;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s ease;
+  &:hover {
+    background: rgb(219, 103, 21);
+  }
+}
+.user-account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  width: 200px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  padding-inline: 5px;
+  position: relative;
+}
+.user-account p {
+  font-size: 16px;
+  color: white;
+  transition: 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.user-account img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.headings {
+  width: 100%;
+  animation: fade-in 1s ease-in-out, slide-in 1s ease-in-out;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: 250px;
+}
+.headings h1 {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+  color: rgba(222, 122, 52);
+}
+.headings h2 {
+  font-size: 38px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.headings p {
+  font-size: 20px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  transition: 0.3s ease;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+.headings button {
+  background: rgba(219, 103, 21);
+  color: black;
+  text-transform: uppercase;
+  font-size: 18px;
+  border: none;
+  font-weight: bold;
+  padding: 20px 30px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    background: white;
+  }
+}
+/* hamburgur */
+
+nav > i {
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute;
+  visibility: hidden;
+}
+/* Responsive design */
+
+@media screen and (max-width: 950px) {
+  nav ul {
+    display: none;
+  }
+  nav > i {
+    visibility: visible;
+    position: static;
+  }
+  nav img {
+    width: 100px;
+    height: 100px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    position: absolute;
+    right: 0;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  nav h1 {
+    transform: translateX(75%);
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .headings h1 {
+    font-size: 22px;
+  }
+  .headings h2 {
+    font-size: 28px;
+  }
+  .headings p {
+    font-size: 16px;
+  }
+  .headings button {
+    font-size: 14px;
+  }
+}
+
+/* Animation */
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
